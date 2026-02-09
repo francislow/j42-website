@@ -1511,7 +1511,7 @@ export default function LandingPage() {
           <Footer>
             <div>© {new Date().getFullYear()} J42. All rights reserved.</div>
             <FooterLinks>
-              <a href="#">Privacyy</a>
+              <a href="#">Privacy</a>
               <a href="#">Terms</a>
               <a href="#">Contact</a>
             </FooterLinks>
