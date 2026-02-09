@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/j42-website/static/css/main.e6c13ad2.css",
+    "main.js": "/j42-website/static/js/main.1a661cb5.js",
+    "index.html": "/j42-website/index.html",
+    "main.e6c13ad2.css.map": "/j42-website/static/css/main.e6c13ad2.css.map",
+    "main.1a661cb5.js.map": "/j42-website/static/js/main.1a661cb5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.1a661cb5.js"
+  ]
+}
