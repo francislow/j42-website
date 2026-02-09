@@ -1511,9 +1511,21 @@ export default function LandingPage() {
           <Footer>
             <div>© {new Date().getFullYear()} J42. All rights reserved.</div>
             <FooterLinks>
-              <a href="#">Privacy</a>
-              <a href="#">Terms</a>
-              <a href="#">Contact</a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://chalkboystudios.github.io/j42-privacy-policy/"
+              >
+                Privacy
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://chalkboystudios.github.io/j42-privacy-policy/"
+              >
+                Terms
+              </a>
+              <a href="mailto:officialchalkstudio@gmail.com">Contact</a>
             </FooterLinks>
           </Footer>
         </Container>
