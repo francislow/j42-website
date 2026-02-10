@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 /**
- * J42 Landing Page — Styled Components edition
+ * Journey 42 Landing Page — Styled Components edition
  * - Single-file React component
  * - styled-components for styling
  * - Framer Motion animations
@@ -1068,7 +1068,7 @@ export default function LandingPage() {
                 <Heart size={20} aria-hidden />
               </BrandIcon>
               <BrandText>
-                <BrandName>J42</BrandName>
+                <BrandName>Journey 42</BrandName>
                 <BrandSub>Daily couple game</BrandSub>
               </BrandText>
             </Brand>
@@ -1122,7 +1122,7 @@ export default function LandingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                J42 makes connection easy: quick daily questions, fun
+                Journey 42 makes connection easy: quick daily questions, fun
                 mini-games, and low-pressure prompts that spark real
                 conversations—without turning it into a therapy session.
               </Lead>
@@ -1315,7 +1315,7 @@ export default function LandingPage() {
           <Container>
             <SectionTitle
               kicker="Examples"
-              title="A few prompts you’ll see inside J42"
+              title="A few prompts you’ll see inside Journey 42"
               subtitle="Balanced: playful enough to start, meaningful enough to matter."
             />
             <DemoGrid>
@@ -1458,7 +1458,7 @@ export default function LandingPage() {
             <FAQGrid>
               <FAQItem>
                 <FAQSummary>
-                  Is J42 for new couples or long-term couples?
+                  Is Journey 42 for new couples or long-term couples?
                 </FAQSummary>
                 <FAQAnswer>
                   Both. Prompts span Light → Warm → Deep so you can keep it
@@ -1482,8 +1482,8 @@ export default function LandingPage() {
               <FAQItem>
                 <FAQSummary>Is our data private?</FAQSummary>
                 <FAQAnswer>
-                  J42 is built as a couple-only space. Add your own privacy
-                  policy + data handling specifics here when ready.
+                  Journey 42 is built as a couple-only space. Add your own
+                  privacy policy + data handling specifics here when ready.
                 </FAQAnswer>
               </FAQItem>
             </FAQGrid>
@@ -1509,7 +1509,9 @@ export default function LandingPage() {
           </FinalCTA>
 
           <Footer>
-            <div>© {new Date().getFullYear()} J42. All rights reserved.</div>
+            <div>
+              © {new Date().getFullYear()} Journey 42. All rights reserved.
+            </div>
             <FooterLinks>
               <a
                 target="_blank"
