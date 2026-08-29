@@ -206,7 +206,7 @@ const HeroTitle = styled.h1`
     display: inline-block;
     position: relative;
     color: var(--yellow);
-    text-shadow: 3px 3px 0 var(--blue-deep);
+    text-shadow: 6px 6px 0 var(--blue-deep);
   }
 
   @media (max-width: 600px) {
@@ -294,12 +294,12 @@ const float = keyframes`
 
 const PhoneStage = styled.div`
   position: relative;
-  min-height: 535px;
+  min-height: 590px;
   display: grid;
   place-items: center;
 
   @media (max-width: 850px) {
-    min-height: 505px;
+    min-height: 550px;
   }
 
   &::before {
@@ -313,186 +313,160 @@ const PhoneStage = styled.div`
   }
 `;
 
-const Phone = styled.div`
+const CarouselWrap = styled.div`
   position: relative;
   z-index: 2;
-  width: 272px;
-  height: 548px;
-  padding: 10px;
-  border: 3px solid var(--blue-deep);
-  border-radius: 43px;
-  background: #071b38;
-  box-shadow:
-    18px 25px 0 rgba(9, 48, 102, 0.35),
-    0 28px 50px rgba(9, 48, 102, 0.26);
+  width: 260px;
   animation: ${float} 5s ease-in-out infinite;
 
   @media (max-width: 600px) {
-    width: 246px;
-    height: 496px;
+    width: 230px;
   }
 `;
 
-const PhoneScreen = styled.div`
+const Phone = styled.div`
   position: relative;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 32px;
-  background: #fefefe;
+  width: 100%;
+  aspect-ratio: 260 / 558;
+  padding: 8px;
+  border: 2px solid #687181;
+  border-radius: 47px;
+  background: linear-gradient(145deg, #2f3640, #05080d 42%, #1b2028);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    inset 0 0 0 3px #05080d,
+    18px 25px 0 rgba(9, 48, 102, 0.35),
+    0 28px 50px rgba(9, 48, 102, 0.26);
+  cursor: grab;
+  touch-action: pan-y;
+
+  &:active {
+    cursor: grabbing;
+  }
 `;
 
-const Notch = styled.div`
-  position: absolute;
-  z-index: 4;
-  top: 7px;
-  left: 50%;
-  width: 78px;
-  height: 19px;
-  transform: translateX(-50%);
-  border-radius: 12px;
+const PhoneViewport = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 37px;
   background: #071b38;
 `;
 
-const StatusBar = styled.div`
-  height: 35px;
-  padding: 8px 17px 0;
-  display: flex;
-  justify-content: space-between;
-  color: #071b38;
-  font-size: 9px;
-  font-weight: 800;
-`;
-
-const GameTop = styled.div`
-  padding: 9px 14px 22px;
-  text-align: center;
-  color: #071b38;
-  background: var(--blue);
-`;
-
-const GameHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 10px;
-  font-weight: 800;
-`;
-
-const Avatars = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 13px 0 8px;
-
-  span {
-    width: 42px;
-    height: 42px;
-    display: grid;
-    place-items: center;
-    margin-left: -7px;
-    border-radius: 50%;
-    border: 3px solid white;
-    background: var(--yellow-pale);
-    color: var(--blue-deep);
-    font-size: 12px;
-    font-weight: 900;
-  }
-  span:first-child {
-    margin-left: 0;
-    background: #d8efff;
-  }
-`;
-
-const Level = styled.div`
-  font-size: 11px;
-  font-weight: 700;
-
-  strong {
-    display: block;
-    margin-top: -3px;
-    font-size: 45px;
-    line-height: 1;
-  }
-`;
-
-const GamePanel = styled.div`
-  position: relative;
-  z-index: 2;
-  margin: -1px 10px 0;
-  padding: 18px 12px;
-  border-radius: 21px;
-  background: white;
-  box-shadow: 0 4px 14px rgba(9, 48, 102, 0.12);
-  text-align: left;
-`;
-
-const GamePanelTitle = styled.div`
-  display: flex;
-  justify-content: space-between;
-  font-size: 16px;
-  font-weight: 900;
-`;
-
-const GameCard = styled.div`
-  margin-top: 13px;
-  overflow: hidden;
-  border: 1.5px solid #17263a;
-  border-radius: 8px;
-  box-shadow: 0 3px 0 rgba(9, 48, 102, 0.16);
-
-  small {
-    display: block;
-    padding: 6px 9px;
-    color: white;
-    background: #2f3640;
-    font-size: 7px;
-    font-weight: 800;
-    text-align: right;
-  }
-
-  div {
-    padding: 13px 11px 11px;
-  }
-  b {
-    display: block;
-    margin: 6px 0 3px;
-    font-size: 11px;
-  }
-  p {
-    margin: 0;
-    font-size: 10px;
-    line-height: 1.35;
-  }
-  footer {
-    padding: 5px;
-    background: var(--yellow);
-    font-size: 8px;
-    font-weight: 800;
-    text-align: center;
-  }
-`;
-
-const Tag = styled.span<{ $yellow?: boolean }>`
-  display: inline-block;
-  margin-right: 3px;
-  padding: 3px 6px;
+const DynamicIsland = styled.span`
+  position: absolute;
+  z-index: 5;
+  top: 14px;
+  left: 50%;
+  width: 72px;
+  height: 18px;
+  transform: translateX(-50%);
   border-radius: 999px;
-  background: ${(props) => (props.$yellow ? "var(--yellow-pale)" : "#cfe3ff")};
-  color: ${(props) => (props.$yellow ? "#9a7900" : "var(--blue-dark)")};
-  font-size: 6px;
-  font-weight: 900;
+  background: #030507;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #111e2d;
+    box-shadow: inset 0 0 2px #254a71;
+  }
 `;
 
-const PlayButton = styled.div`
-  margin: 62px 10px 0;
-  padding: 11px;
-  border: 2px solid #d1ae00;
-  border-radius: 11px;
-  background: var(--yellow);
-  color: #16233a;
-  box-shadow: 0 3px 0 #c7a300;
-  font-size: 17px;
-  font-weight: 900;
-  text-align: center;
+const SlideTrack = styled.div<{ $slide: number }>`
+  display: flex;
+  height: 100%;
+  transform: translateX(${(props) => props.$slide * -100}%);
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+`;
+
+const Screenshot = styled.img`
+  width: 100%;
+  height: 100%;
+  flex: 0 0 100%;
+  display: block;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+`;
+
+const SlideArrow = styled.button<{ $next?: boolean }>`
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  ${(props) => (props.$next ? "right: 8px;" : "left: 8px;")}
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 1.5px solid rgba(9, 48, 102, 0.35);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--blue-deep);
+  box-shadow: 0 2px 8px rgba(9, 48, 102, 0.2);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  opacity: 0;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+
+  ${Phone}:hover &,
+  ${Phone}:focus-within & {
+    opacity: 1;
+  }
+
+  &:hover {
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  &:focus-visible {
+    opacity: 1;
+    outline: 3px solid var(--yellow);
+    outline-offset: 2px;
+  }
+
+  @media (hover: none) {
+    opacity: 0.82;
+  }
+`;
+
+const SlideDots = styled.div`
+  position: absolute;
+  left: 50%;
+  bottom: -31px;
+  display: flex;
+  gap: 6px;
+  transform: translateX(-50%);
+`;
+
+const SlideDot = styled.button<{ $active: boolean }>`
+  width: ${(props) => (props.$active ? "20px" : "7px")};
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: ${(props) =>
+    props.$active ? "var(--yellow)" : "rgba(255, 255, 255, 0.48)"};
+  cursor: pointer;
+  transition:
+    width 220ms ease,
+    background 220ms ease;
+
+  &:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+  }
 `;
 
 const FloatCard = styled.div<{ $side?: "left" | "right" }>`
@@ -501,8 +475,8 @@ const FloatCard = styled.div<{ $side?: "left" | "right" }>`
   ${(props) =>
     props.$side === "left"
       ? "left: -4px; top: 88px;"
-      : "right: -2px; bottom: 70px;"}
-  min-width: 142px;
+      : "right: 20px; bottom: 70px;"}
+  min-width: 100px;
   padding: 13px 15px;
   border: 2px solid var(--blue-deep);
   border-radius: 14px;
@@ -1055,6 +1029,20 @@ const testimonials = [
   ],
 ];
 
+const appScreenshots = [
+  ["/screenshots/IMG_4902%201.png", "Journey 42 home screen"],
+  ["/screenshots/IMG_4903%201.png", "Icebreaker category screen"],
+  ["/screenshots/IMG_4900%201.png", "Who's More Likely game"],
+  ["/screenshots/IMG_5407%201.png", "Draw and Tell game"],
+  ["/screenshots/IMG_5410%201.png", "Off-Script question game"],
+  ["/screenshots/IMG_4905%201.png", "Would You Rather game"],
+  ["/screenshots/IMG_4901%201.png", "Bond level-up screen"],
+  ["/screenshots/IMG_4908%201.png", "Couple conversation screen"],
+  ["/screenshots/IMG_4911%201.png", "Daily missions screen"],
+  ["/screenshots/IMG_4907%201.png", "At a Glance chats"],
+  ["/screenshots/IMG_4910%201.png", "Shared memories screen"],
+];
+
 function StoreButtons({ showDemo = false }: { showDemo?: boolean }) {
   return (
     <StoreRow>
@@ -1084,52 +1072,97 @@ function StoreButtons({ showDemo = false }: { showDemo?: boolean }) {
 }
 
 function AppPreview() {
+  const [slide, setSlide] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const touchStart = React.useRef<number | null>(null);
+
+  const showPrevious = () =>
+    setSlide((current) =>
+      current === 0 ? appScreenshots.length - 1 : current - 1,
+    );
+  const showNext = () =>
+    setSlide((current) => (current + 1) % appScreenshots.length);
+
+  useEffect(() => {
+    if (paused) return;
+    const timer = window.setInterval(showNext, 3200);
+    return () => window.clearInterval(timer);
+  }, [paused]);
+
+  const finishSwipe = (endX: number) => {
+    if (touchStart.current === null) return;
+    const distance = endX - touchStart.current;
+    if (Math.abs(distance) > 42) {
+      distance > 0 ? showPrevious() : showNext();
+    }
+    touchStart.current = null;
+  };
+
   return (
     <PhoneStage aria-label="Journey 42 app preview">
       <FloatCard $side="left">
         <strong>+1</strong> shared memory
       </FloatCard>
-      <Phone>
-        <PhoneScreen>
-          <Notch />
-          <StatusBar>
-            <span>9:42</span>
-            <span>● ◒ ▰</span>
-          </StatusBar>
-          <GameTop>
-            <GameHeader>
-              <span>⬡ 3 🔥 Full</span>
-              <span>🪙 15</span>
-            </GameHeader>
-            <Avatars>
-              <span>YOU</span>
-              <span>THEM</span>
-            </Avatars>
-            <Level>
-              Bond level<strong>2</strong>
-            </Level>
-          </GameTop>
-          <GamePanel>
-            <GamePanelTitle>
-              <span>Your Move!</span>
-              <span>💛</span>
-            </GamePanelTitle>
-            <GameCard>
-              <small>⌛ EXPIRES IN 23:52:20</small>
-              <div>
-                <Tag $yellow>ICEBREAKER</Tag>
-                <Tag>CONNECTION</Tag>
-                <b>WHO'S MORE LIKELY?</b>
-                <p>Who’s more likely to be the better cuddler?</p>
-              </div>
-              <footer>Your partner left a comment!</footer>
-            </GameCard>
-          </GamePanel>
-          <PlayButton>PLAY</PlayButton>
-        </PhoneScreen>
-      </Phone>
+      <CarouselWrap
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onFocus={() => setPaused(true)}
+        onBlur={() => setPaused(false)}
+      >
+        <Phone
+          role="region"
+          aria-roledescription="carousel"
+          aria-label={`App screenshot ${slide + 1} of ${appScreenshots.length}`}
+          onTouchStart={(event) => {
+            touchStart.current = event.touches[0].clientX;
+          }}
+          onTouchEnd={(event) => finishSwipe(event.changedTouches[0].clientX)}
+        >
+          <PhoneViewport>
+            <SlideTrack $slide={slide}>
+              {appScreenshots.map(([src, alt], index) => (
+                <Screenshot
+                  key={src}
+                  src={src}
+                  alt={alt}
+                  draggable={false}
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              ))}
+            </SlideTrack>
+            <DynamicIsland aria-hidden="true" />
+            <SlideArrow
+              type="button"
+              onClick={showPrevious}
+              aria-label="Previous app screenshot"
+            >
+              ‹
+            </SlideArrow>
+            <SlideArrow
+              $next
+              type="button"
+              onClick={showNext}
+              aria-label="Next app screenshot"
+            >
+              ›
+            </SlideArrow>
+          </PhoneViewport>
+        </Phone>
+        <SlideDots aria-label="Choose an app screenshot">
+          {appScreenshots.map(([, alt], index) => (
+            <SlideDot
+              key={alt}
+              $active={index === slide}
+              type="button"
+              onClick={() => setSlide(index)}
+              aria-label={`Show screenshot ${index + 1}: ${alt}`}
+              aria-current={index === slide ? "true" : undefined}
+            />
+          ))}
+        </SlideDots>
+      </CarouselWrap>
       <FloatCard $side="right">
-        🔥 Bond streak <strong>3</strong>
+        🔥 Level <strong>3</strong>
       </FloatCard>
     </PhoneStage>
   );
@@ -1155,7 +1188,7 @@ export default function LandingPage() {
       <GlobalStyle />
       <Nav>
         <NavInner>
-          <Logo href="#top">
+          <Logo>
             <LogoMark>
               <img src="/j42-website-icon-192.png" alt="" />
             </LogoMark>
@@ -1332,7 +1365,7 @@ export default function LandingPage() {
 
       <Footer>
         <FooterInner>
-          <Logo href="#top">
+          <Logo>
             <LogoMark>
               <img src="/j42-website-icon-192.png" alt="" />
             </LogoMark>{" "}
