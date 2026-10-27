@@ -1,0 +1,14 @@
+{
+  "my-data": {
+    "title": "J42 – My Data",
+    "description": "Request access to, correction of, or deletion of your Journey 42 data."
+  },
+  "privacy-policy": {
+    "title": "J42 – Privacy Policy",
+    "description": "How Journey 42 collects, uses, shares, and protects your personal data."
+  },
+  "terms-of-service": {
+    "title": "J42 – Terms of Service",
+    "description": "Terms governing your use of Journey 42."
+  }
+}

@@ -1,36 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styled, { createGlobalStyle, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
+import GlobalStyle from "./styles/GlobalStyle";
 
 const GP_URL =
   "https://play.google.com/store/apps/details?id=com.chalkstudios.j42";
 const IOS_URL = "https://apps.apple.com/sg/app/journey-42/id6755078097";
-
-const GlobalStyle = createGlobalStyle`
-  :root {
-    --blue: #6DA5F4;
-    --blue-dark: #1257B8;
-    --blue-deep: #093066;
-    --blue-pale: #eef5ff;
-    --yellow: #FFDA10;
-    --yellow-pale: #FFF6C5;
-    --ink: #10223c;
-    --muted: #60708a;
-    --white: #ffffff;
-  }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    color: var(--ink);
-    background: #fff;
-    font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  button, a { font: inherit; }
-  a { color: inherit; }
-  ::selection { background: var(--yellow); color: var(--blue-deep); }
-`;
 
 const Page = styled.div`
   overflow: hidden;
@@ -922,6 +896,7 @@ const FooterInner = styled(Shell)`
 
 const FooterLinks = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   a {
     text-decoration: none;
@@ -1376,6 +1351,9 @@ export default function LandingPage() {
             together.
           </span>
           <FooterLinks>
+            <a href="/privacy-policy/">Privacy Policy</a>
+            <a href="/terms-of-service/">Terms of Service</a>
+            <a href="/my-data/">My Data</a>
             <a href="mailto:chalkboystudios@gmail.com?subject=I%20have%20some%20feedback!">
               Contact
             </a>
