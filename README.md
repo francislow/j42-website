@@ -1,4 +1,4 @@
-Build this in master and add the output build into gh_pages
+`npm run build` in master and add the output build into gh_pages
 
 The standalone pages live in `src/pages/` and are selected by their URL in
 `src/App.tsx`: `/my-data/`, `/privacy-policy/`, and `/terms-of-service/`.
