@@ -1,4 +1,9 @@
-`npm run build` in master and add the output build into gh_pages
+How to deploy to production
+
+1. `npm run build` in master
+2. Switch branch to `gh_pages`
+3. Copy all content in /build folder into root
+4. git push
 
 The standalone pages live in `src/pages/` and are selected by their URL in
 `src/App.tsx`: `/my-data/`, `/privacy-policy/`, and `/terms-of-service/`.
