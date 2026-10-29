@@ -1005,17 +1005,24 @@ const testimonials = [
 ];
 
 const appScreenshots = [
-  ["/screenshots/IMG_4902%201.png", "Journey 42 home screen"],
-  ["/screenshots/IMG_4903%201.png", "Icebreaker category screen"],
-  ["/screenshots/IMG_4900%201.png", "Who's More Likely game"],
-  ["/screenshots/IMG_5407%201.png", "Draw and Tell game"],
-  ["/screenshots/IMG_5410%201.png", "Off-Script question game"],
-  ["/screenshots/IMG_4905%201.png", "Would You Rather game"],
-  ["/screenshots/IMG_4901%201.png", "Bond level-up screen"],
-  ["/screenshots/IMG_4908%201.png", "Couple conversation screen"],
-  ["/screenshots/IMG_4911%201.png", "Daily missions screen"],
-  ["/screenshots/IMG_4907%201.png", "At a Glance chats"],
-  ["/screenshots/IMG_4910%201.png", "Shared memories screen"],
+  ["/screenshots/photo_1_2026-10-30_01-42-11.jpg", "J42 Home page"],
+  [
+    "/screenshots/photo_2_2026-10-30_01-42-11.jpg",
+    "Difficulty progression screen",
+  ],
+  [
+    "/screenshots/photo_4_2026-10-30_01-42-11.jpg",
+    "Who's more likely gameplay",
+  ],
+  ["/screenshots/photo_5_2026-10-30_01-42-11.jpg", "Draw and tell gameplay"],
+  ["/screenshots/photo_11_2026-10-30_01-42-11.jpg", "Love notes gameplay"],
+  ["/screenshots/photo_8_2026-10-30_01-42-11.jpg", "Level up screen"],
+  ["/screenshots/photo_7_2026-10-30_01-42-11.jpg", "Would you rather gameplay"],
+  ["/screenshots/photo_16_2026-10-30_01-42-11.jpg", "Check-in gameplay"],
+  ["/screenshots/photo_6_2026-10-30_01-42-11.jpg", "Off-script gameplay"],
+  ["/screenshots/photo_13_2026-10-30_01-42-11.jpg", "Daily activities screen"],
+  ["/screenshots/photo_10_2026-10-30_01-42-11.jpg", "Conversation screen"],
+  ["/screenshots/photo_15_2026-10-30_01-42-11.jpg", "Progression screen"],
 ];
 
 function StoreButtons({ showDemo = false }: { showDemo?: boolean }) {
