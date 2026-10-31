@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import GlobalStyle from "./styles/GlobalStyle";
+import { trackStoreClick } from "./analytics";
 
 const GP_URL =
   "https://play.google.com/store/apps/details?id=com.chalkstudios.j42";
@@ -1025,11 +1026,12 @@ const appScreenshots = [
   ["/screenshots/photo_15_2026-10-30_01-42-11.jpg", "Progression screen"],
 ];
 
-function StoreButtons({ showDemo = false }: { showDemo?: boolean }) {
+function StoreButtons({ showDemo = false, placement }: { showDemo?: boolean; placement: "hero" | "download" | "demo" }) {
   return (
     <StoreRow>
       <StoreBadge
         href={GP_URL}
+        onClick={() => trackStoreClick("google_play", placement)}
         target="_blank"
         rel="noreferrer"
         aria-label="Get Journey 42 on Google Play"
@@ -1038,6 +1040,7 @@ function StoreButtons({ showDemo = false }: { showDemo?: boolean }) {
       </StoreBadge>
       <StoreBadge
         href={IOS_URL}
+        onClick={() => trackStoreClick("app_store", placement)}
         target="_blank"
         rel="noreferrer"
         aria-label="Download Journey 42 on the App Store"
@@ -1198,7 +1201,7 @@ export default function LandingPage() {
               Answer, reveal, laugh and level up together. Journey 42 turns a
               few minutes a day into conversations you’ll actually remember.
             </HeroCopy>
-            <StoreButtons showDemo />
+            <StoreButtons showDemo placement="hero" />
             <HeroNote>
               Free to start · Play together on iOS and Android
             </HeroNote>
@@ -1341,7 +1344,7 @@ export default function LandingPage() {
             Download Journey 42, invite your partner and make a little more room
             for each other—one move at a time.
           </p>
-          <StoreButtons />
+          <StoreButtons placement="download" />
         </CtaBox>
       </FinalCta>
 
@@ -1388,7 +1391,7 @@ export default function LandingPage() {
               The product tour is being prepared. In the meantime, download
               Journey 42 and take your first move together.
             </p>
-            <StoreButtons />
+            <StoreButtons placement="demo" />
           </ModalCard>
         </Modal>
       )}
