@@ -1006,27 +1006,30 @@ const testimonials = [
 ];
 
 const appScreenshots = [
-  ["/screenshots/photo_1_2026-10-30_01-42-11.jpg", "J42 Home page"],
+  ["/screenshots/IMG_6269.PNG", "J42 Home page"],
   [
     "/screenshots/photo_2_2026-10-30_01-42-11.jpg",
     "Difficulty progression screen",
   ],
-  [
-    "/screenshots/photo_4_2026-10-30_01-42-11.jpg",
-    "Who's more likely gameplay",
-  ],
-  ["/screenshots/photo_5_2026-10-30_01-42-11.jpg", "Draw and tell gameplay"],
-  ["/screenshots/photo_11_2026-10-30_01-42-11.jpg", "Love notes gameplay"],
-  ["/screenshots/photo_8_2026-10-30_01-42-11.jpg", "Level up screen"],
-  ["/screenshots/photo_7_2026-10-30_01-42-11.jpg", "Would you rather gameplay"],
-  ["/screenshots/photo_16_2026-10-30_01-42-11.jpg", "Check-in gameplay"],
-  ["/screenshots/photo_6_2026-10-30_01-42-11.jpg", "Off-script gameplay"],
-  ["/screenshots/photo_13_2026-10-30_01-42-11.jpg", "Daily activities screen"],
-  ["/screenshots/photo_10_2026-10-30_01-42-11.jpg", "Conversation screen"],
-  ["/screenshots/photo_15_2026-10-30_01-42-11.jpg", "Progression screen"],
+  ["/screenshots/IMG_6270.PNG", "Who's more likely gameplay"],
+  ["/screenshots/IMG_6266.PNG", "Love notes gameplay"],
+  ["/screenshots/IMG_6265.PNG", "Level up screen"],
+  ["/screenshots/IMG_6267.PNG", "Draw and tell gameplay"],
+  ["/screenshots/IMG_6273.PNG", "Daily activities screen"],
+  ["/screenshots/IMG_6263.PNG", "Daily check-in gameplay"],
+  ["/screenshots/IMG_6268.PNG", "Off-script gameplay"],
+  ["/screenshots/IMG_6272.PNG", "Progression screen"],
+  ["/screenshots/IMG_6274.PNG", "Discuss activity conversations"],
+  ["/screenshots/IMG_6271.PNG", "Conversation screen"],
 ];
 
-function StoreButtons({ showDemo = false, placement }: { showDemo?: boolean; placement: "hero" | "download" | "demo" }) {
+function StoreButtons({
+  showDemo = false,
+  placement,
+}: {
+  showDemo?: boolean;
+  placement: "hero" | "download" | "demo";
+}) {
   return (
     <StoreRow>
       <StoreBadge
